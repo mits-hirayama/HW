@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+				<style>
+						#mario {
+						        position: fixed;
+                                top: 50px;
+                                left: 0px;
+                                width: 100px;
+						}
+				</style>
+</head>
+<body>
+				<img id ="mario" src="./mario.png" alt="">
+				<button id="move_btn">move</button>
+				<script>
+                    var n = 0;
+                    var x = 0;
+                    var y = 0;
+
+                    document.getElementById("move_btn").addEventListener("click", function(){
+                        n += 1;
+                            switch(n%4){
+                                case 0:
+                                    x = 0;
+                                    y = 50;
+                                    break;
+                                case 1:
+                                    x = 50;
+                                    y = 50;
+                                    break;
+                                case 2:
+                                    x = 50;
+                                    y = 100;
+                                    break;
+                                case 3:
+                                    x = 0;
+                                    y = 100;
+                                    break;
+                            }
+                        document.getElementById("mario").style.left = x + "px";
+                        document.getElementById("mario").style.top = y + "px";
+                    });
+				</script>
+</body>
+</html>
